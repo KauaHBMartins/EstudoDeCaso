@@ -10,6 +10,6 @@ public interface IProdutoDAO {
 
 	public boolean excluir(Produto p);
 
-	public ArrayList<Produto> listarPessoas();
+	public ArrayList<Produto> list();
 
 }

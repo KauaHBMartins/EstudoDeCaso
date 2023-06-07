@@ -3,17 +3,16 @@ package visao;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import controle.ProdutoDAO;
 import modelo.Produto;
 
 public class MainProduto {
 
 	public static void main(String[] args) {
-
-	}
-	
+		
 	Scanner leitura = new Scanner(System.in); 
 	Integer opSelecionada = Integer.MAX_VALUE;
-	ArrayList<Produto> pessoa = new ArrayList<>();
+	ArrayList<Produto> produto = new ArrayList<>();
 	
 	
 	while (opSelecionada != 0) {
@@ -37,9 +36,20 @@ public class MainProduto {
 	}
 	
 	case 1: {
+		ArrayList<Produto> lista = ProdutoDAO.getInstance().list();
+		
+		for (int i = 0; i < lista.size(); i++) {
+			System.out.println(lista.get(i).getNomeCamisa());
+			System.out.println(lista.get(i).getNomeCalca());
+			System.out.println(lista.get(i).getNomeSapato());
+			System.out.println(lista.get(i).getNomeChapeu());
+		}
+		
+		
 	}
 	
 	case 2: {
+		
 	}
 	
 	case 3: {
@@ -71,15 +81,14 @@ public class MainProduto {
 		while (senhaconfirmaPessoa != senhaPessoa) {
 			System.out.println("A senha está errada");
 			System.out.println("Confirme a senha:");
-			Integer senhaconfirmaPessoa1 = Integer.valueOf(leitura.nextLine());
+			
 		}
 
-		Produto p = new Produto();
-		p.nomePessoa = (nomePessoa);
-		p.emailPessoa = (emailPessoa);
-		p.senhaPessoa = (senhaPessoa);
-		p.senhaconfirmaPessoa = (senhaconfirmaPessoa);
-		pessoa.add(p);
+		Produto usuario = new Produto();
+		usuario.nomePessoa = (nomePessoa);
+		usuario.emailPessoa = (emailPessoa);
+		usuario.senhaPessoa = (senhaPessoa);
+		usuario.senhaconfirmaPessoa = (senhaconfirmaPessoa);
 	}
 	
 	

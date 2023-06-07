@@ -1,7 +1,7 @@
 package modelo;
 
 public class Produto {
-
+	
 	public String nomePessoa;
 	public String getNomePessoa() {
 		return nomePessoa;
@@ -27,6 +27,18 @@ public class Produto {
 	public void setSenhaconfirmaPessoa(int senhaconfirmaPessoa) {
 		this.senhaconfirmaPessoa = senhaconfirmaPessoa;
 	}
+	public String getEmailPessoa() {
+		return emailPessoa;
+	}
+	public void setEmailPessoa(String emailPessoa) {
+		this.emailPessoa = emailPessoa;
+	}
+	public String getNomeCamisa() {
+		return nomeCamisa;
+	}
+	public void setNomeCamisa(String nomeCamisa) {
+		this.nomeCamisa = nomeCamisa;
+	}
 	public int getCodigoCatalago() {
 		return codigoCatalago;
 	}
@@ -45,5 +57,28 @@ public class Produto {
 	public int codigoCatalago;
 	public int codigoRoupa;
 	public String emailPessoa;
+	public String nomeCamisa;
+	public String nomeCalca;
+	public String nomeSapato;
+	public String nomeChapeu;
+	public String getNomeCalca() {
+		return nomeCalca;
+	}
+	public void setNomeCalca(String nomeCalca) {
+		this.nomeCalca = nomeCalca;
+	}
+	public String getNomeSapato() {
+		return nomeSapato;
+	}
+	public void setNomeSapato(String nomeSapato) {
+		this.nomeSapato = nomeSapato;
+	}
+	public String getNomeChapeu() {
+		return nomeChapeu;
+	}
+	public void setNomeChapeu(String nomeChapeu) {
+		this.nomeChapeu = nomeChapeu;
+	}
+	
 
 }
