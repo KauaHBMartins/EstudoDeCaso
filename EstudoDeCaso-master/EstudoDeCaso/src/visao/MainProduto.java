@@ -19,12 +19,12 @@ public class MainProduto {
 		
 		System.out.println("-------  BEM-VINDO A LOJA CHAVOSO.COM  -------");
 		System.out.println("0 SAIR");
-		System.out.println("1 VISUALIZAÇÂO DO CATALOGO");
-		System.out.println("2 COMPRA");
-		System.out.println("3 VENDA");	
-		System.out.println("4 CARRINHO");
-		System.out.println("5 PAGAMENTO");	
-		System.out.println("6 CADASTRO");	
+		System.out.println("1 CADASTRO");
+		System.out.println("2 VISUALIZAÇÂO DO CATALOGO");
+		System.out.println("3 COMPRA");	
+		System.out.println("4 VENDA");
+		System.out.println("5 CARRINHO");	
+		System.out.println("6 PAGAMENTO");	
 		
 	opSelecionada = Integer.valueOf(leitura.nextLine());
 	
@@ -35,50 +35,6 @@ public class MainProduto {
 	}
 	
 	case 1: {
-		ArrayList<Produto> lista = ProdutoDAO.getInstance().list();
-		
-		for (int i = 0; i < lista.size(); i++) {
-			System.out.println(lista.get(i).getNomeCamisa());
-			System.out.println(lista.get(i).getNomeCalca());
-			System.out.println(lista.get(i).getNomeSapato());
-			System.out.println(lista.get(i).getNomeChapeu());
-		}
-		
-		
-	}
-	
-	case 2: {
-		
-		System.out.println("Digite o codico da roupa que deseja comprar :");
-		Integer codicoCompra = Integer.valueOf(leitura.nextLine());
-		
-		System.out.println("Deseja ir direto para o pagamento digite 1 caso contrario digite 2 para continuar escolhendo as roupas :");
-		Integer opcaoCompra = Integer.valueOf(leitura.nextLine());//se escolher 1 continua para o pagamento pro outro caso se for continuar comprando repete esse de cima e também tem q pegar e peguntar se ele quer add no carrinho
-	}
-	
-	case 3: {
-	}	
-	
-	case 4: {
-	}
-	
-	case 5: {
-		
-		System.out.println("Confirme sua senha para efetuar o pagamento :");
-		
-		System.out.println("Senha:");
-		Integer senhaPessoa = Integer.valueOf(leitura.nextLine());
-		
-		System.out.println("Confirme a senha:");
-		Integer senhaconfirmaPessoa = Integer.valueOf(leitura.nextLine());
-		
-		while (senhaconfirmaPessoa != senhaPessoa) {
-			System.out.println("A senha está errada");
-			return;
-		
-		}
-	}
-	case 6: {
 		
 		System.out.println("Nome:");
 		String nomePessoa = leitura.nextLine();
@@ -92,25 +48,64 @@ public class MainProduto {
 		System.out.println("Confirme a senha:");
 		Integer senhaconfirmaPessoa = Integer.valueOf(leitura.nextLine());
 		
+		if (senhaconfirmaPessoa != senhaPessoa) {
+			System.out.println("A senha está errada");
+			return;}
+			
+			Produto usuario = new Produto();
+			usuario.nomePessoa = (nomePessoa);
+			usuario.emailPessoa = (emailPessoa);
+			usuario.senhaPessoa = (senhaPessoa);
+			usuario.senhaconfirmaPessoa = (senhaconfirmaPessoa);
+		}
+		
+	
+	case 2: {
+		ArrayList<Produto> lista = ProdutoDAO.getInstance().list();
+		
+		for (int i = 0; i < lista.size(); i++) {
+			System.out.println(lista.get(i).getNomeCamisa());
+			System.out.println(lista.get(i).getNomeCalca());
+			System.out.println(lista.get(i).getNomeSapato());
+			System.out.println(lista.get(i).getNomeChapeu());
+		}
+		
+	}
+	
+	case 3: {
+		System.out.println("Digite o codico da roupa que deseja comprar :");
+		Integer codicoCompra = Integer.valueOf(leitura.nextLine());
+		
+		System.out.println("Deseja ir direto para o pagamento digite 1 caso contrario digite 2 para continuar escolhendo as roupas :");
+		Integer opcaoCompra = Integer.valueOf(leitura.nextLine());//se escolher 1 continua para o pagamento pro outro caso se for continuar comprando repete esse de cima e também tem q pegar e peguntar se ele quer add no carrinho
+	}	
+	
+	case 4: {
+	}
+	
+	case 5: {
+		
+		
+		
+		}
+	
+	case 6: {
+		
+		System.out.println("Confirme sua senha para efetuar o pagamento :");
+		
+		System.out.println("Senha:");
+		Integer senhaPessoa = Integer.valueOf(leitura.nextLine());
+		
+		System.out.println("Confirme a senha:");
+		Integer senhaconfirmaPessoa = Integer.valueOf(leitura.nextLine());
+		
 		while (senhaconfirmaPessoa != senhaPessoa) {
 			System.out.println("A senha está errada");
 			return;
+		
 			
 		}
-
-		Produto usuario = new Produto();
-		usuario.nomePessoa = (nomePessoa);
-		usuario.emailPessoa = (emailPessoa);
-		usuario.senhaPessoa = (senhaPessoa);
-		usuario.senhaconfirmaPessoa = (senhaconfirmaPessoa);
 	}
-	
-	
-	
-	
-	
-	
-	
 		}
 	}
 	
