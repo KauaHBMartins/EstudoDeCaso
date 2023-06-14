@@ -57,6 +57,7 @@ public class MainProduto {
 			usuario.emailPessoa = (emailPessoa);
 			usuario.senhaPessoa = (senhaPessoa);
 			usuario.senhaconfirmaPessoa = (senhaconfirmaPessoa);
+			break;
 		}
 		
 	
@@ -69,7 +70,7 @@ public class MainProduto {
 			System.out.println(lista.get(i).getNomeSapato());
 			System.out.println(lista.get(i).getNomeChapeu());
 		}
-		
+		break;
 	}
 	
 	case 3: {
@@ -81,12 +82,13 @@ public class MainProduto {
 	}	
 	
 	case 4: {
+		break;
 	}
 	
 	case 5: {
 		
 		
-		
+		break;
 		}
 	
 	case 6: {
@@ -103,8 +105,8 @@ public class MainProduto {
 			System.out.println("A senha está errada");
 			return;
 		
-			
 		}
+		break;
 	}
 		}
 	}
