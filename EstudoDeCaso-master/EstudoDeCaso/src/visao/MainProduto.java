@@ -87,6 +87,10 @@ public class MainProduto {
 	
 	case 5: {
 		
+		System.out.println("Digite o codigo da roupa que deseja adicionar no carrinho: ");
+		Integer codicoCompra = Integer.valueOf(leitura.nextLine());
+		carrinho.adicionarCodicoCompra(codicoCompra);
+		System.out.println("Produto adicionado no carrinho, com sucesso");
 		
 		break;
 		}
